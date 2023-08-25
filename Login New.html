@@ -1,0 +1,63 @@
+<html>
+    <head>
+        <title>Smart Polyhouse</title>
+        <link rel="stylesheet" href="Login.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    </head>
+    <body>
+        <div class="form-box">
+            <h1>Login Here</h1>
+            <div class="input-box">
+                <i class="fa fa-user" ></i>
+                <input type="email" placeholder="User Name" id="myuser">
+            </div>
+            
+            <div class="input-box">
+                <i class="fa fa-key" ></i>
+                <input type="password" placeholder="Password" id="mypassword">
+                <span class="eye" onclick="myFunction()">
+                    <i id="hide1" class="fa fa-eye" ></i>
+                    <i id="hide2" class="fa fa-eye-slash" ></i>
+                </span>
+            </div>
+            <button type="button" class="login-btn" onclick="myFunction1()" >LOGIN</button>
+        </div>
+        <script>
+            function myFunction(){
+                
+                var x = document.getElementById("mypassword");
+                var y = document.getElementById("hide1");
+                var z = document.getElementById("hide2");
+
+                if(x.type == "password"){
+                    x.type = "text";
+                    y.style.display = "block";
+                    z.style.display = "none";
+                }
+                else{
+                    x.type = "password";
+                    y.style.display = "none";
+                    z.style.display = "block";
+                }
+                
+            
+            }
+        </script>
+        <script>
+            function myFunction1(){
+                var s = document.getElementById("myuser").value;
+                var x = document.getElementById("mypassword").value;
+                if(s == "Polyhouse" && x == "SLT1234"){
+                    window.location.assign("http://127.0.0.1:1880/ui/#!/1?socketid=jVV9BDLIjYl4VXPFAAA1");
+                    alert("Login Successfully");
+                }
+                else{
+                    alert("Invaild Username or password");
+                    return;
+
+                }
+            }
+        </script>
+
+    </body>
+</html>
